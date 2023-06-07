@@ -1,0 +1,103 @@
+/* timeline */
+.card-timeline {
+    .card-timeline-body {
+        ul {
+            li {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                .card-timeline-body__title {
+                    display: flex;
+                    align-items: center;
+                    position: relative;
+                    padding: 13px 0;
+
+                    .badge-dot--big {
+                        width: 10px;
+                        height: 10px;
+                        position: absolute;
+                    }
+                    .badge-dot--img{
+                        width: 34px;
+                        height: 34px;
+                        position: absolute;
+                        i{
+                            color: var(--color-white);
+                        }
+                    }
+
+                    p {
+                        margin-bottom: 0;
+                        font-size: 14px;
+                        font-weight: 500;
+                        color: var(--color-gray);
+                        margin-left: 25px;
+                    }
+                }
+
+                &:not(:last-child) {
+                    .card-timeline-body__title {
+                        .timeline-line {
+                            position: absolute;
+                            left: 4px;
+                            top: 18px;
+                            height: 100%;
+                            width: 1px;
+                            z-index: 0;
+                            background-color: var(--border-normal);
+                        }
+                    }
+                }
+            }
+        }
+
+        .card-timeline-body__time {
+            span {
+                font-size: 13px;
+                font-weight: 400;
+                color: var(--light-gray);
+            }
+        }
+    }
+    &.card-timeline__activity{
+        .card-timeline-body {
+            ul {
+                li{
+                    .card-timeline-body__title {
+                        padding: 15.9px 0;
+                        @include xxs{
+                            padding: 10px 0;
+                        }
+                        p{
+                            margin-left: 45px;
+                            font-size: 15px;
+                        }
+                        .badge-dot--img{
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            i{
+                                @include rfs(19px);
+                            }
+                        }
+                    }
+                    &:not(:last-child) {
+                        .card-timeline-body__title {
+                            .timeline-line{
+                                position: absolute;
+                                left: 16px;
+                                top: 18px;
+                                height: 100%;
+                                width: 0.2px;
+                                z-index: 0;
+                                border-left: 3px dotted var(--border-normal);
+                                background-color: transparent;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
